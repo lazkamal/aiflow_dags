@@ -14,6 +14,6 @@ with DAG('databricks_dag',
 
   opr_run_now = DatabricksRunNowOperator(
     task_id = 'run_now',
-    databricks_conn_id = 'databricks_anthony_test',
+    databricks_conn_id = 'databricks_default',
     job_id = 1111903256503995
   )
