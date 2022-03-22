@@ -8,5 +8,6 @@ def test_bash_operator():
     test = BashOperator(task_id="test", bash_command="echo testme", xcom_push=True, dag= dag)
     result = test.execute(context={})
     assert result == "testme"
-
+    
+test_bash_operator()
 
