@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 
 
 def test_dagbag():
-    dag_bag = DagBag(include_example=False)
+    dag_bag = DagBag()
     assert not dag_bag.import_errors
 
 with DAG(
