@@ -1,5 +1,8 @@
 import unittest
 from airflow.models import DagBag
+from airflow.models import DAG
+
+
 dag = DAG(dag_id="test", start_date=airflow.utils.dates.days_ago(1), schedule_interval="@daily")
 class TestDagIntegrity(unittest.TestCase):
 
