@@ -96,9 +96,9 @@ templated_command = """
 t3 = BashOperator(
     task_id='templated',
     depends_on_past=False,
-    bash_command=templated,
+    bash_command=templated_command,
     params={'my_param': 'Parameter I passed in'},
-    dag=dag,
+    dag=da,
 )
 
 t1 >> [t2, t3] 
