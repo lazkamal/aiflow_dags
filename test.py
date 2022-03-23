@@ -1,6 +1,6 @@
 import unittest
 from airflow.models import DagBag
-dag = DAG(dag_id="test", start_date=airflow.utils.dates.days_ago(0), schedule_interval="@daily")
+dag = DAG(dag_id="test", start_date=airflow.utils.dates.days_ago(1), schedule_interval="@daily")
 class TestDagIntegrity(unittest.TestCase):
 
     LOAD_SECOND_THRESHOLD = 2
