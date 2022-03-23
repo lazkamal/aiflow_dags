@@ -11,6 +11,10 @@ def test_dagbag():
     for dag_id, dag in dag_bag.dags.items():
         error_msg= f"{dag_id} in {dag.full_filepath} has no tags"
         assert dag.tags, error_msg
+        
+    for dag_id, dag in dag_bag.dags.items():
+        error_msg= f"{dag_id} in {dag.full_filepath} has no description"
+        assert dag.description, error_msg
 
 with DAG(
     dag_id="dag_test_3",
