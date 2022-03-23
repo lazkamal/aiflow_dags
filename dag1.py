@@ -98,7 +98,7 @@ t3 = BashOperator(
     depends_on_past=False,
     bash_command=templated_command,
     params={'my_param': 'Parameter I passed in'},
-    dag=da,
+    dag=dag,
 )
 
 t1 >> [t2, t3] 
