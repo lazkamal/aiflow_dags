@@ -63,7 +63,7 @@ dag = DAG(
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
-    task_id='print_date',
+    task_id='print_dat',
     bash_command='date',
     dag=dag,
 )
