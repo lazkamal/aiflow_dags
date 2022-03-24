@@ -8,8 +8,10 @@ try:
         dag_bag = DagBag(include_examples=False)
         assert not dag_bag.import_errors
         for dag_id, dag in dag_bag.dags.items():
+            msg = f"{dag_id} in {dag.full_filepath} has a description"
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
-            assert dag.description
+            assert dag.description, error_msg
+            print(msg)
 
     with DAG(
             dag_id="dag_test_3",
@@ -20,7 +22,6 @@ try:
             task_id="test",
             python_callable=test_dagbag,
         )
-
 # the errror_message provided by the user gets printed
 except AssertionError as msg:
     print(msg)
