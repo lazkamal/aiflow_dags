@@ -3,13 +3,10 @@ from airflow.utils.dates import days_ago
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 def test_dagbag():
-        dag_bag = DagBag(include_examples=False)
-        assert not dag_bag.import_errors
-        for dag_id, dag in dag_bag.dags.items():
-            m = f"{dag_id} in {dag.full_filepath} has a description"
-            error_msg = f"{dag_id} in {dag.full_filepath} has no description"
-            assert dag.description, error_msg
-            print(m)
+        x = 1
+	y = 1
+	assert y != 0, "Invalid Operation"
+	print(x / y)
 try:
     
     with DAG(
