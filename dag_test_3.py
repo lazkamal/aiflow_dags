@@ -9,6 +9,12 @@ def test_dagbag():
         for dag_id, dag in dag_bag.dags.items():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
             assert dag.description, "Invalid"
+		
+def cal():
+	x = 1
+	y = 1
+	assert y != 0, "Invalid Operation"
+	print(x / y)
 try:
 	
 
@@ -19,7 +25,7 @@ try:
     ) as dag:
         run_this = PythonOperator(
             task_id="test",
-            python_callable=test_dagbag,
+            python_callable=cal(),
         )
 
 # the errror_message provided by the user gets printed
