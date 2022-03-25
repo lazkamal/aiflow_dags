@@ -3,15 +3,14 @@ from airflow.utils.dates import days_ago
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 
-try:
-    def test_dagbag():
+def test_dagbag():
         dag_bag = DagBag(include_example=False)
         assert not dag_bag.import_errors
         for dag_id, dag in dag_bag.dags.items():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
-	    m = f"{dag_id} in {dag.full_filepath} has no description"
             assert dag.description, error_msg
-	    print(m)
+try:
+	
 
     with DAG(
         dag_id="dag_test_3",
