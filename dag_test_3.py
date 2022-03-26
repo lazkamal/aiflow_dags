@@ -8,7 +8,7 @@ def test_dagbag():
         # assert not dag_bag.import_errors
         for dag_id, dag in dag_bag.dags.items():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
-            assert dag.description, dag_bag.dags.items()
+            assert dag.description, dag_bag.dags.keys()
 		
 def cal():
 	x = 1
