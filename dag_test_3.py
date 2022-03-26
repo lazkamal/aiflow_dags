@@ -13,7 +13,7 @@ def test_dagbag():
 def cal():
 	x = 1
 	y = 1
-	assert y != 0, "Invalid Operation"
+	assert y, "Invalid Operation"
 	print(x / y)
 try:
 	
