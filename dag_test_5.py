@@ -11,7 +11,7 @@ try:
         for dag_id, dag in dag_bag.dags.items():
             emails = dag.default_args.get('email', [])
             msg = 'Alert email not set for DAG {id}'.format(id=dag_id)
-            assert('lazkamal34@gmail.com', emails, msg)
+            assert 'lazkamal34@gmail.com', emails, msg
 
 
     with DAG(
