@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 
 try:
     def test_dagbag():
-        dag_bag = DagBag(include_example=False)
+        dag_bag = DagBag(include_examples=False)
         assert not dag_bag.import_errors
         dag = dag_bag.dags['databricks_dag']
         error_msg = f"databricks_dag in {dag.full_filepath} has no description"
