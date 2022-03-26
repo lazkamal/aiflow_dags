@@ -60,6 +60,7 @@ dag = DAG(
     description='A simple tutorial DAG',
     schedule_interval=timedelta(days=1),
 )
+assert dag.description == "Hello"
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
@@ -87,7 +88,7 @@ t2 = BashOperator(
 
 templated_command = """
 {% for i in range(5) %}
-    cho "{{ ds }}"
+    echo "{{ ds }}"
     echo "{{ macros.ds_add(ds, 7)}}"
     echo "{{ params.my_param }}"
 {% endfor %}
