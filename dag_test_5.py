@@ -2,6 +2,7 @@ from airflow.models import DagBag
 from airflow.utils.dates import days_ago
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
+import unittest
 
 try:
     def test_dagbag():
