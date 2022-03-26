@@ -4,13 +4,13 @@ from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 
 try:
-    def test_dagbag(self):
+    def test_dagbag():
         dag_bag = DagBag(include_examples=False)
         assert not dag_bag.import_errors
-        for dag_id, dag in self.dagbag.dags.iteritems():
+        for dag_id, dag in dagbag.dags.iteritems():
             emails = dag.default_args.get('email', [])
             msg = 'Alert email not set for DAG {id}'.format(id=dag_id)
-            self.assertIn('lazkamal34@gmail.com', emails, msg)
+            assertIn('lazkamal34@gmail.com', emails, msg)
 
 
     with DAG(
