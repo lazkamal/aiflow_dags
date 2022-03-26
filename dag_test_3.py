@@ -17,6 +17,8 @@ try:
     with DAG(
         dag_id="dag_test_3",
         schedule_interval="@daily",
+        email = "kamal.lazhar@external.stellantis.com",
+        email_on_failure = True,
         start_date=days_ago(2),
     ) as dag:
         run_this = PythonOperator(
