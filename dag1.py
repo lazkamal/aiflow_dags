@@ -35,7 +35,7 @@ default_args = {
     'depends_on_past': False,
     'start_date': airflow.utils.dates.days_ago(2),
     'email': ['kamal.lazhar@external.stellantis.com'],
-    'email_on_failure': ['kamal.lazhar@external.stellantis.com'],
+    'email_on_failure': True,
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
@@ -95,7 +95,7 @@ templated_command = """
 
 t3 = BashOperator(
     task_id='templated',
-    depends_on_pas=False,
+    depends_on_past=False,
     bash_command=templated_command,
     params={'my_param': 'Parameter I passed in'},
     dag=dag,
