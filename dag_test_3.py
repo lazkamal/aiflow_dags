@@ -2,7 +2,13 @@ from airflow.models import DagBag
 from airflow.utils.dates import days_ago
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
-
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email': ['kamal.lazhar@external.stellantis.com'],
+    'email_on_failure': True,
+    'email_on_retry': False,
+}
 try:
     def test_dagbag():
         dag_bag = DagBag(include_examples=False)
@@ -16,6 +22,7 @@ try:
 
     with DAG(
         dag_id="dag_test_3",
+        default_args=default_args,
         schedule_interval="@daily",
         email = "kamal.lazhar@external.stellantis.com",
         email_on_failure = True,
