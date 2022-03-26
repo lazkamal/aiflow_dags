@@ -5,6 +5,7 @@ from airflow.operators.python import PythonOperator
 
 def test_dagbag():
         dag_bag = DagBag(include_examples=False)
+	print(dag_bag.dags.items())
         # assert not dag_bag.import_errors
         for dag_id, dag in dag_bag.dags.items():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
