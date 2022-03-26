@@ -60,7 +60,7 @@ dag = DAG(
     description='A simple tutorial DAG',
     schedule_interval=timedelta(days=1),
 )
-assert dag.description == "Hello"
+assert dag.sla
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
