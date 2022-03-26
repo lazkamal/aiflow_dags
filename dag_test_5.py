@@ -4,7 +4,7 @@ from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 
 try:
-    def test_dagbag():
+    def test_dagbag(self):
         dag_bag = DagBag(include_examples=False)
         assert not dag_bag.import_errors
         for dag_id, dag in self.dagbag.dags.iteritems():
