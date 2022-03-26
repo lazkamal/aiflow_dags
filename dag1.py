@@ -36,7 +36,7 @@ default_args = {
     'start_date': airflow.utils.dates.days_ago(2),
     'email': ['kamal.lazhar@external.stellantis.com'],
     'email_on_failure': ['kamal.lazhar@external.stellantis.com'],
-    'email_on_retry': False,
+    'email_on_retry': Fals,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
     # 'queue': 'bash_queue',
@@ -60,7 +60,6 @@ dag = DAG(
     #description='A simple tutorial DAG',
     schedule_interval=timedelta(days=1),
 )
-assert dag.description
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
