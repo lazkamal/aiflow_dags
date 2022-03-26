@@ -6,9 +6,10 @@ from airflow.operators.python import PythonOperator
 def test_dagbag():
         dag_bag = DagBag(include_examples=False)
         # assert not dag_bag.import_errors
-        for dag_id, dag in dag_bag.dags.items():
-            error_msg = f"{dag_id} in {dag.full_filepath} has no description"
-            assert dag.description, dag_bag.dags.keys()[1]
+        #for dag_id, dag in dag_bag.dags.items():
+	dag = dag_bag.dags['databricks_dag']
+        error_msg = f"databricks_dag in {dag.full_filepath} has no description"
+        assert dag.description, error_msg
 		
 def cal():
 	x = 1
