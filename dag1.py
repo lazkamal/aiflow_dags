@@ -57,10 +57,10 @@ default_args = {
 dag = DAG(
     'tutorial',
     default_args=default_args,
-    description='A simple tutorial DAG',
+    #description='A simple tutorial DAG',
     schedule_interval=timedelta(days=1),
 )
-assert dag.sla
+assert dag.description
 
 # t1, t2 and t3 are examples of tasks created by instantiating operators
 t1 = BashOperator(
