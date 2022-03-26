@@ -10,9 +10,9 @@ try:
         for dag_id, dag in dag_bag.dags.items():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
             if dag.description:
-                print(error_msg)
-            else:
                 print("Valid Dag")
+            else:
+                print(error_msg)
 
     with DAG(
         dag_id="dag_test",
