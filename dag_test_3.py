@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'email': ['kamal.lazhar@external.stellantis.com'],
+    'email': ['lazkamal34@gmail.com'],
     'email_on_failure': True,
     'email_on_retry': False,
 }
