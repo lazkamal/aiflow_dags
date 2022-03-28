@@ -25,10 +25,9 @@ def test_dagbag():
 try:
     def cal():
 	x = 1
-	y = 0
-	assert y != 0 , "Invalid Operation"
+	y = 1
+	assert y, "Invalid Operation"
 	print(x / y)
-    
 
     with DAG(
         dag_id="dag_test_3",
