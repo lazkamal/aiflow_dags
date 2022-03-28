@@ -12,10 +12,10 @@ default_args = {
 def cal():
 	x = 1
 	y = 0
-	assert y , "Invalid Operation"
+	assert y != 0 , "Invalid Operation"
 	print(x / y)
-try:
-    def test_dagbag():
+	
+def test_dagbag():
         dag_bag = DagBag(include_examples=False)
         assert not dag_bag.import_errors
         # dag = dag_bag.dags['tutorial']
@@ -24,6 +24,8 @@ try:
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
             assert dag.description, error_msg
             print("Valid Dag")
+try:
+    
 
     with DAG(
         dag_id="dag_test_3",
