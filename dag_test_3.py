@@ -9,11 +9,7 @@ default_args = {
     'email_on_failure': True,
     'email_on_retry': False,
 }
-def cal():
-	x = 1
-	y = 0
-	assert y != 0 , "Invalid Operation"
-	print(x / y)
+
 	
 def test_dagbag():
         dag_bag = DagBag(include_examples=False)
@@ -24,7 +20,14 @@ def test_dagbag():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
             assert dag.description, error_msg
             print("Valid Dag")
+	
+
 try:
+	def cal():
+	x = 1
+	y = 0
+	assert y != 0 , "Invalid Operation"
+	print(x / y)
     
 
     with DAG(
