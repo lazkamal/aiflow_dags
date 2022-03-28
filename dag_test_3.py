@@ -20,15 +20,15 @@ def test_dagbag():
             error_msg = f"{dag_id} in {dag.full_filepath} has no description"
             assert dag.description, error_msg
             print("Valid Dag")
-	
-
-try:
-    def cal():
+def cal():
 	x = 1
 	y = 1
 	assert y != 0, "Invalid Operation"
 	print(x / y)
+	
 
+try:
+    
     with DAG(
         dag_id="dag_test_3",
         default_args=default_args,
