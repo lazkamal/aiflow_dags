@@ -9,6 +9,11 @@ default_args = {
     'email_on_failure': True,
     'email_on_retry': False,
 }
+def cal():
+	x = 1
+	y = 1
+	assert y, "Invalid Operation"
+	print(x / y)
 try:
     def test_dagbag():
         dag_bag = DagBag(include_examples=False)
@@ -28,7 +33,7 @@ try:
     ) as dag:
         run_this = PythonOperator(
             task_id="test",
-            python_callable=test_dagbag,
+            python_callable=cal,
         )
 
 # the errror_message provided by the user gets printed
