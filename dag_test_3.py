@@ -26,7 +26,7 @@ try:
     def cal():
 	x = 1
 	y = 1
-	assert y, "Invalid Operation"
+	assert y != 0, "Invalid Operation"
 	print(x / y)
 
     with DAG(
