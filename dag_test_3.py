@@ -30,7 +30,7 @@ try:
         default_args=default_args,
         schedule_interval="@daily",
         start_date=days_ago(2),
-    ) as da
+    ) as dag
         run_this = PythonOperator(
             task_id="test",
             python_callable=cal,
