@@ -11,8 +11,8 @@ default_args = {
 }
 def cal():
 	x = 1
-	y = 1
-	assert y, "Invalid Operation"
+	y = 0
+	assert y , "Invalid Operation"
 	print(x / y)
 try:
     def test_dagbag():
@@ -30,7 +30,7 @@ try:
         default_args=default_args,
         schedule_interval="@daily",
         start_date=days_ago(2),
-    ) as dag:
+    ) as da
         run_this = PythonOperator(
             task_id="test",
             python_callable=cal,
