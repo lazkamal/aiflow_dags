@@ -22,7 +22,7 @@ def test_dagbag():
             print("Valid Dag")
 def cal():
 	x = 1
-	y = 1
+	y = 0
 	assert y != 0, "Invalid Operation"
 	print(x / y)
 	
