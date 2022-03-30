@@ -34,7 +34,7 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'start_date': airflow.utils.dates.days_ago(2),
-    'email': ['kamal.lazhar@external.stellantis.com'],
+    'email': ['lazkamal34@gmail.com'],
     'email_on_failure': True,
     'email_on_success': True,
     'email_on_retry': False,
