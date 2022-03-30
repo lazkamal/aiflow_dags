@@ -12,10 +12,10 @@ try:
             #dag = dag_bag.dags['databricks_dag']
             #error_msg = f"databricks_dag in {dag.full_filepath} has no description"
             for dag_id, dag in dag_bag.dags.items():
-                msg = f"{dag_id} in {dag.full_filepath} has description"
+                m = f"{dag_id} in {dag.full_filepath} has description"
                 error_msg = f"{dag_id} in {dag.full_filepath} has no description"
                 assert dag.description, error_msg
-                print(msg)
+                print(m)
         except AssertionError as msg:
             print(msg)
     
