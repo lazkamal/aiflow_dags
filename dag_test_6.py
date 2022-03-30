@@ -2,6 +2,7 @@ from airflow.operators.email_operator import EmailOperator
 from airflow.models import DagBag
 from airflow.utils.dates import days_ago
 from airflow.models import DAG
+from datetime import datetime
 
 default_args = {
     "owner": "airflow",
