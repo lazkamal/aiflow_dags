@@ -15,7 +15,7 @@ try:
 
 
     with DAG(
-        dag_id="dag_test_5",
+        dag_id="dag_test",
         schedule_interval="@daily",
         start_date=days_ago(2),
     ) as dag:
