@@ -12,19 +12,13 @@ try:
             #dag = dag_bag.dags['databricks_dag']
             #error_msg = f"databricks_dag in {dag.full_filepath} has no description"
             for dag_id, dag in dag_bag.dags.items():
-         #  error_msg = f"{dag_id} in {dag.full_filepath} has no description"
+                msg = f"{dag_id} in {dag.full_filepath} has description"
                 error_msg = f"{dag_id} in {dag.full_filepath} has no description"
                 assert dag.description, error_msg
+                print(msg)
         except AssertionError as msg:
             print(msg)
-    def cal():
-        try:
-            x = 1
-            y = 0
-            assert y != 0, "Invalid Operation"
-            print(x / y)
-        except AssertionError as msg:
-            print(msg)
+    
 
     with DAG(
         dag_id="dag_test_3",
