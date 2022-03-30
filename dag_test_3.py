@@ -8,7 +8,9 @@ def test_dagbag():
 
 
     dag_bag = DagBag(include_examples=False)
-    assert not dag_bag.import_errors
+    try:
+        assert not dag_bag.import_errors
+    
     # dag = dag_bag.dags['databricks_dag']
     # error_msg = f"databricks_dag in {dag.full_filepath} has no description"
     for dag_id, dag in dag_bag.dags.items():
@@ -16,7 +18,8 @@ def test_dagbag():
         error_msg = f"{dag_id} in {dag.full_filepath} has no description"
         try:
             assert dag.description, error_msg
-
+        except AssertionError as msg:
+            print(msg)
     # the errror_message provided by the user gets printed
         except AssertionError as msg:
             print(msg)
