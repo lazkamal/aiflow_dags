@@ -3,14 +3,12 @@ from airflow.models import DagBag
 from airflow.utils.dates import days_ago
 from airflow.models import DAG
 
-
-def test_dagbag():
-    default_args = {
-        "owner": "airflow",
-        "start_date": datetime(2022, 2, 16),
-        'email': ['lazkamal34@gmail.com'],
-        'email_on_failure': True,
-    }
+default_args = {
+    "owner": "airflow",
+    "start_date": datetime(2022, 2, 16),
+    'email': ['lazkamal34@gmail.com'],
+    'email_on_failure': True,
+}
 with DAG(
         dag_id="Sending_mail",
         schedule_interval="@once",
