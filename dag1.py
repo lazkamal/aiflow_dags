@@ -36,6 +36,7 @@ default_args = {
     'start_date': airflow.utils.dates.days_ago(2),
     'email': ['kamal.lazhar@external.stellantis.com'],
     'email_on_failure': True,
+    'email_on_success': True,
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
