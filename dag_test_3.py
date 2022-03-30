@@ -33,7 +33,7 @@ try:
     ) as dag:
         run_this = PythonOperator(
             task_id="test",
-            python_callable=cal,
+            python_callable=test_dagbag,
         )
 
 # the errror_message provided by the user gets printed
