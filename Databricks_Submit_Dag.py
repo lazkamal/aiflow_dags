@@ -47,7 +47,8 @@ with DAG(
     # Example of using the JSON parameter to initialize the operator.
     new_cluster = {
         'spark_version': '9.1.x-scala2.12',
-        'node_type_id': 'r3.xlarge',
+        'node_type_id': 'Standard_DS3_v2
+',
         'aws_attributes': {'availability': 'ON_DEMAND'},
         'num_workers': 8,
     }
