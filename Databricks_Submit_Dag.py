@@ -48,7 +48,6 @@ with DAG(
     new_cluster = {
         'spark_version': '9.1.x-scala2.12',
         'node_type_id': 'Standard_DS3_v2',
-        'aws_attributes': {'availability': 'ON_DEMAND'},
         'num_workers': 8,
     }
 
