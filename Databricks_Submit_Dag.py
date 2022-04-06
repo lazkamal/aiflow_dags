@@ -54,7 +54,7 @@ with DAG(
     notebook_task_params = {
         'new_cluster': new_cluster,
         'notebook_task': {
-            'notebook_path': '//?o=5452932209069474#folder/2987723893033865',
+            'notebook_path': '/Users/sc87291@inetpsa.com/test1',
         },
     }
 
