@@ -55,6 +55,12 @@ with DAG(
         'new_cluster': new_cluster,
         'notebook_task': {
             'notebook_path': '/Users/sc87291@inetpsa.com/test1',
+            "email_notifications": {
+                
+                "on_start": [ "lazkamal34@gmail.com" ],
+                "on_success": [],
+                "on_failure": []   
+            }
         },
     }
 
