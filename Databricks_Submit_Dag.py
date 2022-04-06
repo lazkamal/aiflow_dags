@@ -57,8 +57,8 @@ with DAG(
             'notebook_path': '/Users/sc87291@inetpsa.com/test1',
             "email_notifications": {
                 
-                "on_start": [ "lazkamal34@gmail.com" ],
-                "on_success": [],
+                "on_start": [ "kamal.lazhar@external.stellantis.com" ],
+                "on_success": [ "kamal.lazhar@external.stellantis.com" ],
                 "on_failure": []   
             }
         },
