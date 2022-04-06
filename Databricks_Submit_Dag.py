@@ -54,7 +54,7 @@ with DAG(
     notebook_task_params = {
         'new_cluster': new_cluster,
         'notebook_task': {
-            'notebook_path': 'https://adb-5452932209069474.14.azuredatabricks.net/?o=5452932209069474#notebook/2793260056369794/command/2793260056369795',
+            'notebook_path': '/?o=5452932209069474#notebook/2793260056369794/command/2793260056369795',
         },
     }
 
