@@ -73,8 +73,12 @@ with DAG(
     spark_jar_task = DatabricksSubmitRunOperator(
         task_id='spark_jar_task',
         new_cluster=new_cluster,
-        spark_jar_task={'main_class_name': 'com.example.ProcessData'},
-        libraries=[{'jar': 'dbfs:/lib/etl-0.1.jar'}],
+        spark_jar_task={'main_class_name': 'com.example.ProcessData'
+                       "main_class_name":"org.apache.spark.examples.SparkPi",
+                        "parameters": "10"
+                       },
+        libraries=[{'jar': 'dbfs:/FileStore/sparkpi/sparkpi_assembly_0_1.jar'}],
     )
+    
     # [END howto_operator_databricks_named]
     notebook_task >> spark_jar_task
