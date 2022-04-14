@@ -23,5 +23,5 @@ echo 'Hello World'
 t1 = SSHOperator(
     ssh_conn_id='ssh_default',
     task_id='test_ssh_operator',
-    command=t1_bash,
+    command='whoami',
     dag=dag)
