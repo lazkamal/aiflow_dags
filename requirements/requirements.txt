@@ -1,0 +1,7 @@
+# Updated for MWAA - Airflow version 2.0.2
+# python3 -m pip install --user -U -r requirements.txt
+DateTime
+apache-airflow
+apache-airflow-providers-microsoft-azure
+apache-airflow-providers-postgres
+apache-airflow-providers-databricks
