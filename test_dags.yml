@@ -1,6 +1,13 @@
 name: Test DAGs
 
-
+on:
+  push:
+    paths:
+      - 'dags/**'
+  pull_request:
+    types: [opened]
+    branches:
+      - main
 
 jobs:
   test:
