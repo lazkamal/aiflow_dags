@@ -5,3 +5,5 @@ apache-airflow
 apache-airflow-providers-microsoft-azure
 apache-airflow-providers-postgres
 apache-airflow-providers-databricks
+pycairo
+testresources
