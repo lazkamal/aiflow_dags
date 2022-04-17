@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+on:
+  push:
+    paths:
+      - 'dags/**'
+  pull_request:
+    branches:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+        python -m pip install --upgrade pip
+        pip install -r requirements/requirements.txt
+        pip check
+  displayName: 'Install Python dependencies'
+
+- script: |
+        pip install pytest==6.2.5
+        pushd tests || exit
+        python3 -m pytest tests.py -v || exit
+        popd || exit
+  displayName: 'Test DAGs with Pytest'
