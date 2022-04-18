@@ -58,7 +58,7 @@ default_args = {
 dag = DAG(
     'tutorial',
     default_args=default_args,
-    dscription='A simple tutorial DAG',
+    description='A simple tutorial DAG',
     schedule_interval=timedelta(days=1),
 )
 
@@ -102,4 +102,4 @@ t3 = BashOperator(
     dag=dag,
 )
 
-t1 >> [t2, t3]
+t1 >> [t2, t3] >> t1
