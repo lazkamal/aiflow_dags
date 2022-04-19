@@ -27,7 +27,7 @@ with DAG(
     dagrun_timeout=timedelta(minutes=5),
     start_date=days_ago(1),
     schedule_interval=None,
-    tags=["data lake demo airflow"],
+    tags=["data lake"],
 ) as dag:
     begin = DummyOperator(task_id="begin")
 
