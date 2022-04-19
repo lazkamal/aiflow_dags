@@ -37,5 +37,5 @@ def test_dag_id_contains_prefix(dag_bag):
         assert str.lower(dag_id).find("__") != -1
 def test_dag_id_requires_specific_prefix(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
-        assert str.lower(dag_id).startswith("PRD00__") \
-               or str.lower(dag_id).startswith("PRD01__")
+        assert str.lower(dag_id).startswith("prd00__") \
+               or str.lower(dag_id).startswith("prd01__")
