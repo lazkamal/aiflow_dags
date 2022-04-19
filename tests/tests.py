@@ -3,13 +3,6 @@ import sys
 import pytest
 from airflow.models import DagBag
 sys.path.append(os.path.join(os.path.dirname(__file__), "../dags"))
-sys.path.append(os.path.join(os.path.dirname(__file__), "../dags/utilities"))
-# Airflow variables called from DAGs under test are stubbed out
-os.environ["AIRFLOW_VAR_DATA_LAKE_BUCKET"] = "test_bucket"
-os.environ["AIRFLOW_VAR_ATHENA_QUERY_RESULTS"] = "SELECT 1;"
-os.environ["AIRFLOW_VAR_SNS_TOPIC"] = "test_topic"
-os.environ["AIRFLOW_VAR_REDSHIFT_UNLOAD_IAM_ROLE"] = "test_role_1"
-os.environ["AIRFLOW_VAR_GLUE_CRAWLER_IAM_ROLE"] = "test_role_2"
 @pytest.fixture(params=["../dags/"])
 def dag_bag(request):
     return DagBag(dag_folder=request.param, include_examples=False)
@@ -18,12 +11,9 @@ def test_no_import_errors(dag_bag):
 def test_requires_tags(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
         assert dag.tags
-def test_requires_specific_tag(dag_bag):
+def test_requires_description(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
-        try:
-            assert dag.tags.index("data lake demo") >= 0
-        except ValueError:
-            assert dag.tags.index("redshift demo") >= 0
+        assert dag.description
 def test_desc_len_greater_than_fifteen(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
         assert len(dag.description) > 15
@@ -32,7 +22,7 @@ def test_owner_len_greater_than_five(dag_bag):
         assert len(dag.owner) > 5
 def test_owner_not_airflow(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
-        assert str.lower(dag.owner) != "airflow"
+        assert str.lower(dag.owner) == "airflow"
 def test_no_emails_on_retry(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
         assert not dag.default_args["email_on_retry"]
@@ -47,5 +37,5 @@ def test_dag_id_contains_prefix(dag_bag):
         assert str.lower(dag_id).find("__") != -1
 def test_dag_id_requires_specific_prefix(dag_bag):
     for dag_id, dag in dag_bag.dags.items():
-        assert str.lower(dag_id).startswith("data_lake__") \
-               or str.lower(dag_id).startswith("redshift_demo__")
+        assert str.lower(dag_id).startswith("PRD00__") \
+               or str.lower(dag_id).startswith("PRD01__")
