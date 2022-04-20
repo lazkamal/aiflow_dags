@@ -6,15 +6,6 @@ set -u  # script fails if trying to access to an undefined variable
 echo "[+] Action start"
 
 
-if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
-then
-	DESTINATION_REPOSITORY_USERNAME="$DESTINATION_GITHUB_USERNAME"
-fi
-
-if [ -z "$USER_NAME" ]
-then
-	USER_NAME="$DESTINATION_GITHUB_USERNAME"
-fi
 
 CLONE_DIR=$(mktemp -d)
 
