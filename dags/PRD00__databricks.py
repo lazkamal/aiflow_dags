@@ -8,7 +8,7 @@ DAG_ID = os.path.basename(__file__).replace(".py", "")
 DEFAULT_ARGS = {
     "owner": "airflow",
     "depends_on_past": False,
-    "retries": 1,
+    "retries": 3,
     "email_on_failure": False,
     "email_on_retry": False,
 }
