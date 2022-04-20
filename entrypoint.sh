@@ -64,7 +64,7 @@ echo "[+] Creating (now empty) $ABSOLUTE_TARGET_DIRECTORY"
 mkdir -p "$ABSOLUTE_TARGET_DIRECTORY"
 
 echo "[+] Listing Current Directory Location"
-ls -al
+ls 
 
 echo "[+] Listing root Location"
 ls /
