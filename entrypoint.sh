@@ -64,10 +64,10 @@ echo "[+] Creating (now empty) $ABSOLUTE_TARGET_DIRECTORY"
 mkdir -p "$ABSOLUTE_TARGET_DIRECTORY"
 
 echo "[+] Listing Current Directory Location"
-ls 
+ls /github
 
 echo "[+] Listing root Location"
-ls /
+ls /home
 
 mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
 
