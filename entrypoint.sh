@@ -67,7 +67,7 @@ echo "[+] Listing Current Directory Location"
 ls -al
 
 echo "[+] Listing root Location"
-ls -al /
+ls /
 
 mv "$TEMP_DIR/.git" "$CLONE_DIR/.git"
 
