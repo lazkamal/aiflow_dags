@@ -20,7 +20,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'output'
+          source-directory: 'dags'
           destination-github-username: 'lazkamal'
           destination-repository-name: 'DAGS_VALIDATION'
           user-email: lazkamal34@gmail.com
