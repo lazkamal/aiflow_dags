@@ -22,6 +22,7 @@ echo 'Hello World'
 """
 t1 = AzureBatchOperator(
     task_id='test_batch_operator',
+    azure_batch_conn_id='azure_batch_default',
     batch_pool_id='airflow-test-pool',
     batch_pool_vm_size='standard_a2_v2',
     batch_job_id='myJob_test',
