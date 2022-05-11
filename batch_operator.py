@@ -32,5 +32,5 @@ t1 = AzureBatchOperator(
     vm_sku='none',
     vm_offer='none',
     vm_node_agent_sku_id='none',
-    target_dedicated_nodes=2,
+    target_dedicated_nodes=0,
     dag=dag)
