@@ -28,5 +28,5 @@ t1 = AzureBatchOperator(
     batch_job_id='myJob_test',
     batch_task_command_line="echo 'Hello World'",
     batch_task_id='myTask',
-    vm_publisher='none'
+    vm_publisher='none',
     dag=dag)
