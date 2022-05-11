@@ -1,4 +1,4 @@
-from airflow.providers.microsoft.azure.operators.batch import AzureBatchOperator
+from airflow.providers.microsoft.azure.operators.azure_batch import AzureBatchOperator
 from datetime import timedelta, datetime
 
 from airflow import DAG
