@@ -1,5 +1,5 @@
 from airflow.providers.microsoft.azure.operators.azure_batch import AzureBatchOperator
-from airflow.providers.microsoft.azure.batch.models import ResourceFile
+from azure.mgmt.batch import ResourceFile
 
 from datetime import timedelta, datetime
 
