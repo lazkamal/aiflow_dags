@@ -1,4 +1,6 @@
 from airflow.providers.microsoft.azure.operators.azure_batch import AzureBatchOperator
+from airflow.providers.microsoft.azure.batch.models import ResourceFile
+
 from datetime import timedelta, datetime
 
 from airflow import DAG
@@ -20,6 +22,7 @@ dag = DAG(dag_id='batch_operator',
 t1_bash = """
 echo 'Hello World'
 """
+resource_file= ResourceFile(storage_container_url='https://airflow312.blob.core.windows.net/dags/PRD01__tutorial.py?sp=r&st=2022-05-15T21:50:40Z&se=2022-05-16T05:50:40Z&spr=https&sv=2020-08-04&sr=b&sig=ufrI%2ByNKyFLLmlusJH3TWIyfALHtR%2BkPs6uz89M73Ao%3D')
 t1 = AzureBatchOperator(
     task_id='test_batch_operator',
     azure_batch_conn_id='azure_batch_default',
