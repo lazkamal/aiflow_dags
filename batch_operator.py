@@ -31,6 +31,7 @@ t1 = AzureBatchOperator(
     batch_job_id='myJob_test',
     batch_task_command_line= "/bin/bash -c 'printenv | grep AZ_BATCH; sleep 90s'",
     batch_task_id='myTask2',
+    batch_task_resource_files=[resource_file],
     vm_publisher='canonical',
     vm_offer='ubuntuserver',
     vm_sku='18.04-lts',
