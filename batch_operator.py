@@ -25,7 +25,7 @@ t1_bash = """
   
 resource_file = ResourceFile(
         storage_container_url='https://airflow312.blob.core.windows.net/dags?sv=2020-08-04&ss=bfqt&srt=co&sp=rwdlacupitfx&se=2022-05-25T16:44:32Z&st=2022-05-16T08:44:32Z&spr=https&sig=laWAbUpNd%2FNGmPMA4PqeVsXjfMPFszCk2gV%2Fl3U7E%2FU%3D',
-        file_path='hello_world.py')
+        file_path='hello_world')
 t1 = AzureBatchOperator(
         task_id='test_batch_operator',
         azure_batch_conn_id='azure_batch_default',
