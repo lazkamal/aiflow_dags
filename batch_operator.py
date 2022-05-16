@@ -22,7 +22,7 @@ dag = DAG(dag_id='batch_operator',
 t1_bash = """
 echo 'Hello World'
 """
-resource_file= ResourceFile(storage_container_url='https://airflow312.blob.core.windows.net/dags/PRD01__tutorial.py?sp=r&st=2022-05-15T21:50:40Z&se=2022-05-16T05:50:40Z&spr=https&sv=2020-08-04&sr=b&sig=ufrI%2ByNKyFLLmlusJH3TWIyfALHtR%2BkPs6uz89M73Ao%3D')
+resource_file= ResourceFile(storage_container_url='https://airflow312.blob.core.windows.net/dags/PRD01__tutorial.py?sp=r&st=2022-05-16T08:00:08Z&se=2022-05-21T16:00:08Z&spr=https&sv=2020-08-04&sr=b&sig=keTGI0p7orpdI8Vf3Dz4EgFIDEiKdxA1e8QrNfGGaHo%3D')
 t1 = AzureBatchOperator(
     task_id='test_batch_operator',
     azure_batch_conn_id='azure_batch_default',
