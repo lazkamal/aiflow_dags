@@ -5,15 +5,7 @@ from datetime import timedelta, datetime
 
 from airflow import DAG
 
-if __name__ == "__main__":
-    from airflow.providers.microsoft.azure.operators.azure_batch import AzureBatchOperator
-    from azure.mgmt.batch.models import ResourceFile
-
-    from datetime import timedelta, datetime
-
-    from airflow import DAG
-
-    default_args = {
+default_args = {
         'owner': 'airflow',
         'depends_on_past': False,
         'email': ['airflow@example.com'],
@@ -23,17 +15,18 @@ if __name__ == "__main__":
         'retries': 1,
         'retry_delay': timedelta(minutes=5),
     }
-    dag = DAG(dag_id='batch_operator',
+ dag = DAG(dag_id='batch_operator',
               default_args=default_args,
               schedule_interval='@daily',
               dagrun_timeout=timedelta(seconds=120))
-    t1_bash = """
+ t1_bash = """
     echo 'Hello World'
     """
-    resource_file = ResourceFile(
+  
+ resource_file = ResourceFile(
         storage_container_url='https://airflow312.blob.core.windows.net/dags?sv=2020-08-04&ss=bfqt&srt=co&sp=rwdlacupitfx&se=2022-05-25T16:44:32Z&st=2022-05-16T08:44:32Z&spr=https&sig=laWAbUpNd%2FNGmPMA4PqeVsXjfMPFszCk2gV%2Fl3U7E%2FU%3D',
         file_path='PRD01__tutorial.py')
-    t1 = AzureBatchOperator(
+ t1 = AzureBatchOperator(
         task_id='test_batch_operator',
         azure_batch_conn_id='azure_batch_default',
         batch_pool_id='airflow-test-pool',
