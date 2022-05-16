@@ -25,14 +25,14 @@ t1_bash = """
   
 resource_file = ResourceFile(
         storage_container_url='https://airflow312.blob.core.windows.net/dags?sv=2020-08-04&ss=bfqt&srt=co&sp=rwdlacupitfx&se=2022-05-25T16:44:32Z&st=2022-05-16T08:44:32Z&spr=https&sig=laWAbUpNd%2FNGmPMA4PqeVsXjfMPFszCk2gV%2Fl3U7E%2FU%3D',
-        file_path='PRD01__tutorial.py')
+        file_path='hello_world.py')
 t1 = AzureBatchOperator(
         task_id='test_batch_operator',
         azure_batch_conn_id='azure_batch_default',
         batch_pool_id='airflow-test-pool',
         batch_pool_vm_size='standard_a2_v2',
         batch_job_id='myJob_test',
-        batch_task_command_line="python3 PRD01__tutorial.py",
+        batch_task_command_line="python3 hello_world.py",
         batch_task_id='myTask4',
         batch_task_resource_files=[resource_file],
         vm_publisher='canonical',
