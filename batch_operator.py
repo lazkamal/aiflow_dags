@@ -14,11 +14,11 @@ default_args = {
         'start_date': datetime.now() - timedelta(minutes=20),
         'retries': 1,
         'retry_delay': timedelta(minutes=5),
-    }
+}
  dag = DAG(dag_id='batch_operator',
-              default_args=default_args,
-              schedule_interval='@daily',
-              dagrun_timeout=timedelta(seconds=120))
+           default_args=default_args,
+           schedule_interval='@daily',
+           dagrun_timeout=timedelta(seconds=120))
  t1_bash = """
     echo 'Hello World'
     """
