@@ -6,7 +6,7 @@ from airflow.providers.databricks.operators.databricks_repos import DatabricksRe
 with DAG(
         dag_id='Create_DatabricksRepo',
         schedule_interval='@daily',
-        start_date=datetime(2022, 05, 18),
+        start_date=datetime.now(),
         tags=['example'],
         catchup=False,
 ) as dag:
