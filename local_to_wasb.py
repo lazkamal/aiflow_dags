@@ -10,5 +10,5 @@ with DAG(
         tags=['example'],
         catchup=False,
 ) as dag:
-    git_url = "/etc/ssh/ssh_config"
-    t1 = LocalFilesystemToWasbOperator(task_id='to_wasb',file_path=git_url, container_name='dags', blob_name='ssh', wasb_conn_id='wasb_default')
+    git_url = "/opt/airflow/dags/repo/ssh_operator.py"
+    t1 = LocalFilesystemToWasbOperator(task_id='to_wasb',file_path=git_url, container_name='dags', blob_name='ssh_operator', wasb_conn_id='wasb_default')
