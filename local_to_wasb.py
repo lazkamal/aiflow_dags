@@ -10,6 +10,5 @@ with DAG(
         tags=['example'],
         catchup=False,
 ) as dag:
-    repo_path = "/Repos/sc87291@inetpsa.com/airflow-repo"
     git_url = "https://github.com/lazkamal/dags_2.git"
-    t1 = LocalFilesystemToWasbOperator(task_id='to_wasb',file_path='https://github.com/lazkamal/aiflow_dags/blob/main/batch_operator.py', container_name='airflow312', blob_name='dags', wasb_conn_id='wasb_default')
+    t1 = LocalFilesystemToWasbOperator(task_id='to_wasb',file_path='https://github.com/lazkamal/aiflow_dags/batch_operator.py', container_name='airflow312', blob_name='dags', wasb_conn_id='wasb_default')
