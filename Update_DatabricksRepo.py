@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from airflow import DAG
-from airflow.providers.databricks.operators.databricks_repos import DatabricksReposCreateOperator
+from airflow.providers.databricks.operators.databricks_repos import DatabricksReposUpdateOperator
 
 with DAG(
         dag_id='Update_DatabricksRepo',
