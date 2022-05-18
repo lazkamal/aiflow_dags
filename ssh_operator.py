@@ -12,7 +12,7 @@ default_args = {
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
-dag = DAG(dag_id='testing_stuff',
+dag = DAG(dag_id='ssh_operator',
           default_args=default_args,
           schedule_interval='0,10,20,30,40,50 * * * *',
           dagrun_timeout=timedelta(seconds=120))
