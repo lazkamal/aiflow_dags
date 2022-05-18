@@ -38,7 +38,7 @@ with DAG(
     notebook_task_params = {
         'new_cluster': new_cluster,
         'notebook_task': {
-            'notebook_path': '/Users/sc87291@inetpsa.com/test1',
+            'notebook_path': '/Repos/sc87291@inetpsa.com/airflow-repo/script',
             "email_notifications": {
                 
                 "on_start": [ "kamal.lazhar@external.stellantis.com" ],
@@ -64,4 +64,4 @@ with DAG(
     )
     
     # [END howto_operator_databricks_named]
-    notebook_task >> spark_jar_task
+    notebook_task 
