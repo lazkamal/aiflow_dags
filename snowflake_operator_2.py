@@ -16,6 +16,6 @@ dag = DAG(
 snowflake_op_template_file = SnowflakeOperator(
     task_id='snowflake_op_template_file',
     dag=dag,
-    sql='/opt/airflow/dags/repo/sql/query1.sql',
+    sql='./sql/query1.sql',
 )
 snowflake_op_template_file
