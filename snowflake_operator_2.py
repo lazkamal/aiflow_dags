@@ -5,7 +5,7 @@ from datetime import timedelta, datetime
 
 
 dag = DAG(
-    'example_snowflake',
+    'snowflake_operator_2',
     start_date=datetime(2021, 1, 1),
     default_args={'snowflake_conn_id': snowflake_conn},
     tags=['example'],
