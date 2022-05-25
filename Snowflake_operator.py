@@ -17,9 +17,9 @@ snowflake_query = [
 """insert into TUSHAR.Employee values(1, 'Rakesh', 'Singh', 'TCS', 'rakesh123', '12345', 'NH4', 'Pune', 24521 ),(2, 'Jack', 'Sparrow', 'Apisero', 'jack123', '5678', 'NH8', 'Mumbai', 998877 );""",
 ]
 def get_row_count(**context):
-dwh_hook = SnowflakeHook(snowflake_conn_id="snowflake_conn")
-result = dwh_hook.get_first("select count(*) from TUSHAR.Employee")
-logging.info("Number of rows in `TUSHAR.Employee` - %s", result[0])
+  dwh_hook = SnowflakeHook(snowflake_conn_id="snowflake_conn")
+  result = dwh_hook.get_first("select count(*) from TUSHAR.Employee")
+  logging.info("Number of rows in `TUSHAR.Employee` - %s", result[0])
 with dag:
 create_insert = SnowflakeOperator(
 task_id="snowfalke_create",
