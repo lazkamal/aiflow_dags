@@ -13,7 +13,7 @@ dag = DAG(
 dag_id="snowflake_operator", default_args=args, schedule_interval=None
 )
 snowflake_query = [
-"""DROP TABLE Employee;""",
+"""DROP TABLE DATA_SCH.Employee;""",
 """create table Employee (id number, first_name string, last_name string, company string, email string, cellphone string, streetaddress string, city string, postalcode number);""",
 """insert into Employee values(1, 'Kamal', 'Lazhar', 'Stellantis', 'kamal123', '12345', 'Clemenceau', 'Montbeliard', 25200 ),(2, 'Ayyoub', 'Sghiouri', 'Stellantis', 'ayyoub123', '5678', 'Clemenceau', 'Montbeliard', 25200 );""",
 ]
