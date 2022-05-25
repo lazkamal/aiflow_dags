@@ -13,12 +13,13 @@ dag = DAG(
 dag_id="snowflake_operator", default_args=args, schedule_interval=None
 )
 snowflake_query = [
+"""TRUNCATE TABLE Employee;"""
 """create table Employee (id number, first_name string, last_name string, company string, email string, cellphone string, streetaddress string, city string, postalcode number);""",
 """insert into Employee values(1, 'Rakesh', 'Singh', 'TCS', 'rakesh123', '12345', 'NH4', 'Pune', 24521 ),(2, 'Jack', 'Sparrow', 'Apisero', 'jack123', '5678', 'NH8', 'Mumbai', 998877 );""",
 ]
 def get_row_count(**context):
   dwh_hook = SnowflakeHook(snowflake_conn_id="snowflake_conn")
-  result = dwh_hook.get_first("select count(*) from TUSHAR.Employee")
+  result = dwh_hook.get_first("select count(*) from Employee")
   logging.info("Number of rows in `Employee` - %s", result[0])
 with dag:
   create_insert = SnowflakeOperator(
