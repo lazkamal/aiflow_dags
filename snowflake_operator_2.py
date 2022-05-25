@@ -16,6 +16,7 @@ dag = DAG(
 snowflake_op_template_file = SnowflakeOperator(
     task_id='snowflake_op_template_file',
     dag=dag,
-    sql='./sql/query1.sql',
+    sql='./sql/query2.sql',
+    params={'dynamic_table': 'Customers'},
 )
 snowflake_op_template_file
