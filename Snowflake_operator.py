@@ -21,10 +21,10 @@ def get_row_count(**context):
   result = dwh_hook.get_first("select count(*) from TUSHAR.Employee")
   logging.info("Number of rows in `TUSHAR.Employee` - %s", result[0])
 with dag:
-create_insert = SnowflakeOperator(
-task_id="snowfalke_create",
-sql=snowflake_query ,
-snowflake_conn_id="snowflake_conn",
-)
-get_count = PythonOperator(task_id="get_count", python_callable=get_row_count)
+  create_insert = SnowflakeOperator(
+  task_id="snowfalke_create",
+  sql=snowflake_query ,
+   snowflake_conn_id="snowflake_conn",
+  )
+  get_count = PythonOperator(task_id="get_count", python_callable=get_row_count)
 create_insert >> get_count
