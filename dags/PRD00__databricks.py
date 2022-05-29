@@ -21,7 +21,7 @@ from airflow import DAG
 from airflow.providers.databricks.operators.databricks import DatabricksSubmitRunOperator
 
 with DAG(
-    dag_id='example_databricks_operator',
+    dag_id='PRD00__databricks',
     schedule_interval='@daily',
     start_date=datetime(2021, 1, 1),
     tags=['example'],
