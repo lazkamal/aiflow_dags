@@ -20,7 +20,7 @@ from airflow.providers.databricks.operators.databricks import DatabricksSubmitRu
 with DAG(
     dag_id='submit_run_databricks_operator',
     schedule_interval='@daily',
-    start_date=datetime(2021, 1, 1),
+    start_date=datetime(2022, 03, 22),
     tags=['example'],
     catchup=False,
 ) as dag:
@@ -35,18 +35,12 @@ with DAG(
         'new_cluster': new_cluster,
         'notebook_task': {
             'notebook_path': '/Repos/sc87291@inetpsa.com/airflow-repo/script',
-            "email_notifications": {
-                
+            "email_notifications": { 
                 "on_start": [ "kamal.lazhar@external.stellantis.com" ],
                 "on_success": [ "kamal.lazhar@external.stellantis.com" ],
                 "on_failure": []   
-            }
-        },
-    }
+            }},}
     notebook_task = DatabricksSubmitRunOperator(task_id='notebook_task', json=notebook_task_params)
-    # [END howto_operator_databricks_json]
-
-    # [START howto_operator_databricks_named]
     # Example of using the named parameters of DatabricksSubmitRunOperator
     # to initialize the operator.
     spark_jar_task = DatabricksSubmitRunOperator(
