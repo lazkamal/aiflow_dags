@@ -20,7 +20,7 @@ from airflow.providers.databricks.operators.databricks import DatabricksSubmitRu
 with DAG(
     dag_id='submit_run_databricks_operator',
     schedule_interval='@daily',
-    start_date=datetime(2022, 22, 03),
+    start_date=datetime.now(),
     tags=['example'],
     catchup=False,
 ) as dag:
