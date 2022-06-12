@@ -20,7 +20,7 @@ from airflow.providers.databricks.operators.databricks import DatabricksSubmitRu
 with DAG(
     dag_id='submit_run_databricks_operator',
     schedule_interval='@daily',
-    start_date=datetime(2022, 03, 22),
+    start_date=datetime(2022, 22, 03),
     tags=['example'],
     catchup=False,
 ) as dag:
@@ -29,8 +29,7 @@ with DAG(
     new_cluster = {
         'spark_version': '9.1.x-scala2.12',
         'node_type_id': 'Standard_DS3_v2',
-        'num_workers': 2,
-    }
+        'num_workers': 2,}
     notebook_task_params = {
         'new_cluster': new_cluster,
         'notebook_task': {
