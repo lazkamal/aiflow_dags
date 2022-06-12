@@ -14,12 +14,9 @@ The definition of a successful run is if the run has a result_state of "SUCCESS"
 For more information about the state of a run refer to
 https://docs.databricks.com/api/latest/jobs.html#runstate
 """
-
 from datetime import datetime
-
 from airflow import DAG
 from airflow.providers.databricks.operators.databricks import DatabricksSubmitRunOperator
-
 with DAG(
     dag_id='example_databricks_operator',
     schedule_interval='@daily',
@@ -34,7 +31,6 @@ with DAG(
         'node_type_id': 'Standard_DS3_v2',
         'num_workers': 2,
     }
-
     notebook_task_params = {
         'new_cluster': new_cluster,
         'notebook_task': {
@@ -47,7 +43,6 @@ with DAG(
             }
         },
     }
-
     notebook_task = DatabricksSubmitRunOperator(task_id='notebook_task', json=notebook_task_params)
     # [END howto_operator_databricks_json]
 
@@ -61,7 +56,6 @@ with DAG(
                         'parameters': '10'
                        },
         libraries=[{'jar': 'dbfs:/FileStore/sparkpi/sparkpi_assembly_0_1.jar'}],
-    )
-    
+    ) 
     # [END howto_operator_databricks_named]
-    notebook_task 
+    notebook_task >> spark_jar_task
